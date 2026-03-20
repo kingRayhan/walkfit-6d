@@ -1,4 +1,12 @@
-This refined plan for **WalkFit** is designed to align precisely with your **6D Framework Assignment Template**, ensuring each section meets the criteria for a high-scoring project proposal.
+## WalkFit — project overview
+
+**WalkFit** is a **mobile-first, gamified walking app** for people who want to move more (especially for weight and general health) but struggle to stay consistent. Users **log daily steps** (manual at MVP, automated tracking later), get **immediate feedback** through points, streaks, and level-style progress, and can **join groups** for social challenges and light competition—optional by design so pressure stays healthy.
+
+The experience is framed as **“World Trekker”**: walking unlocks **virtual routes and badges** so the habit feels like exploration, not homework. The design intentionally serves two motivations—**achievers** (XP, goals, milestones) and **socializers** (teams, cheers, leaderboards)—with **anti-cheat caps** and **anti-grind** limits so the game doesn’t push unsafe or fake behavior.
+
+A short **implementation path** is sketched at the end: MVP auth and data (**Better Auth**, **MongoDB**), then a **GraphQL** API and **gamification engine** (economy rules, streaks, pilot experiment).
+
+The sections below follow the **6D gamification framework** (objectives → behaviors → players → loops → fun → tools) so the proposal maps cleanly to the assignment template.
 
 ---
 
