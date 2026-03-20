@@ -7,7 +7,7 @@ This refined plan for **WalkFit** is designed to align precisely with your **6D 
 _Goal: Clearly articulate the problem and how you’ll measure success._
 
 - **1.1 Business Objective Statement:**
-  - **Problem:** Sedentary lifestyles lead to weight-related health issues; individuals lack the intrinsic motivation to maintain a consistent walking routine.
+  - **Problem:** Many people move very little day to day—they sit for work, commute by car, and relax on the couch. Over time, that lack of movement makes it easier to gain weight and raises the risk of health problems tied to inactivity. Walking is simple, cheap, and good for you, but it’s also easy to put off: it can feel boring, and most of us don’t wake up excited to “go for a walk” the way we might for other habits. So even when someone _wants_ to be healthier, they often struggle to stick with walking regularly.
   - **Why Now:** Rising health costs and the ubiquity of mobile health tracking make a low-barrier gamified solution timely.
   - **Who Benefits:** Primary users (weight-loss seekers) and potentially health insurers or corporate wellness programs.
   - **Business Value Hypothesis:** Gamification will increase daily engagement and turn a "boring" task into a rewarding habit.
