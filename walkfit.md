@@ -21,12 +21,24 @@ _Goal: Clearly articulate the problem and how you’ll measure success._
   - **Business Value Hypothesis:** Gamification will increase daily engagement and turn a "boring" task into a rewarding habit.
 
 - **1.2 Success Metrics:**
-  - **North Star Metric:** Average daily step count per active user.
-  - **Target:** 15% increase in steps over 12 weeks.
-  - **Leading Indicator:** Day-7 (D7) retention rate and "Streak" completion.
+  - **North Star Metric:** Average daily steps per active user (how consistently people move).
+  - **Target:** +15% steps on average over 12 weeks.
+  - **Leading indicators (early signals):**
+    - **D7 retention:** how many users come back after 7 days.
+    - **Logging rate:** % of days where a user records steps (a “doing the habit” signal).
+    - **Streak health:** streak completion rate _and_ average streak length (we want consistency, not burnout).
+  - **Guardrails (what not to hurt):**
+    - **Safety flags don’t rise:** the app should not increase “over-exertion” reports or negative feedback (measured via quick check-ins and support/feedback tags).
+    - **Anti-cheat works:** unrealistic step patterns should be detected and treated fairly (so results reflect real behavior).
 - **1.3 Ethics & Risk:**
-  - **Potential Harm:** "Electronic whip" effect leading to over-exertion or anxiety.
-  - **Mitigation:** Include "rest day" mechanics and ensure social competition is opt-in.
+  - **Potential Harm 1 (electronic whip):** People may feel pressured to hit the goal every day, which can lead to over-exertion or anxiety.
+  - **Mitigation:** Add a **rest day / recovery mode**, allow streaks to pause (so missing a day doesn’t feel like failure), and keep goal increases gradual.
+  - **Potential Harm 2 (unsafe/cheating behavior):** Users might try to “farm” points with fake steps or extreme targets that aren’t safe.
+  - **Mitigation:** Put caps on daily scoring, detect impossible step spikes, and validate progress with “reasonable range” rules (then explain simply in the UI when something is flagged).
+  - **Potential Harm 3 (social pressure):** Leaderboards can shame some users or discourage beginners.
+  - **Mitigation:** Social features are **opt-in**, let users choose **team-only or private** visibility, and avoid public comparisons by default.
+  - **Potential Harm 4 (privacy):** Step and activity data can feel personal.
+  - **Mitigation:** Use **data minimization** (only what you need), get clear consent for notifications, and provide an easy way to adjust goals and opt out of social features.
 
 ---
 
@@ -57,7 +69,7 @@ _Goal: Design for diverse motivations._
 
 ---
 
-### **PART 4 — Devise Activity Loops**
+### PART 4 — Devise Activity Loops
 
 _Goal: Tie actions to immediate feedback and visible progress._
 
