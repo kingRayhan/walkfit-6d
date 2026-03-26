@@ -44,7 +44,7 @@ _Goal: Clearly articulate the problem and how you’ll measure success._
 
 ### **PART 2 — Delineate Target Behaviors**
 
-_Goal: Specify the smallest actions you want from players._
+Goal: Specify the smallest actions you want from players.
 
 - **2.1 Behavior Map:**
   - **Keystone Behavior (Verb):** **Log** steps daily (Manual MVP, automated future).
