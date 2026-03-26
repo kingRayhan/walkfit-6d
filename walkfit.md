@@ -47,12 +47,54 @@ _Goal: Clearly articulate the problem and how you’ll measure success._
 Goal: Specify the smallest actions you want from players.
 
 - **2.1 Behavior Map:**
-  - **Keystone Behavior (Verb):** **Log** steps daily (Manual MVP, automated future).
-  - **Supporting Behaviors:** **Join** a group, **cheer** a teammate, **view** leaderboard.
-  - **Trigger:** Daily push notification ("quest prompt") $\to$ **Action:** Walking $\to$ **Feedback:** Points and streak level bar.
+  - **Keystone Behavior (Verb): Log steps**
+    - **Frequency:** once per day (for streak consistency)
+    - **Trigger (when/where):** after waking up, after lunch, or after an evening walk; reinforced by a gentle “quest prompt” notification
+    - **Friction (what makes it hard):** forgetting to log, or not wanting to type numbers
+    - **Success metric:** logging rate (the % of days a user records steps) and streak stability (not just “one perfect week”)
+    - **MVP note:** allow manual step entry as a simple first version; automated tracking can be added later.
+
+  - **Supporting Behavior: Join a group (optional social layer)**
+    - **Frequency:** once at onboarding (or anytime in settings)
+    - **Trigger:** onboarding screen after “Log steps” explanation, plus a “Join a team” button on Home
+    - **Friction:** fear of privacy, or not wanting to be judged
+    - **Success metric:** team join rate and % of users who keep their team for at least 2 weeks
+
+  - **Supporting Behavior: Cheer / support a teammate**
+    - **Frequency:** 1–3 times per week (small effort)
+    - **Trigger:** after teammates log steps, show a “Send a cheer” prompt
+    - **Friction:** feeling like it’s spam or forced
+    - **Success metric:** cheer rate and whether users keep the social tab enabled
+
+  - **Supporting Behavior: View leaderboard (opt-in)**
+    - **Frequency:** quick check after logging steps (daily max) or weekly recap
+    - **Trigger:** after step logging, show “Your team standings” card
+    - **Friction:** leaderboards can discourage beginners
+    - **Success metric:** opt-in leaderboard views and retention (so viewing doesn’t harm engagement)
+
+  - **Core action chain (what you’re designing end-to-end):**
+    - **Trigger:** quest prompt → **Action:** walk (or log) → **Feedback:** points + streak update + a “world route progress” moment
+
 - **2.2 Anti-behaviors & Safeguards:**
-  - **Unwanted Behavior:** "Gaming the system" (shaking the phone for fake steps) [2.3, 384].
-  - **Safeguard:** Implement caps on daily steps and audits for impossible speed intervals.
+  - **Unwanted Behavior 1: Gaming the system (fake steps)**
+    - **Why harmful:** results become untrustworthy and good users feel cheated
+    - **Detection rule:** flag unrealistic step spikes / impossible walking speeds
+    - **Prevent/mitigate:** apply daily scoring caps, require reasonable step ranges, and treat suspicious entries consistently (no random punishment).
+
+  - **Unwanted Behavior 2: Over-exertion / burnout**
+    - **Why harmful:** chasing streaks can push unsafe behavior
+    - **Detection rule:** unusually large increases, repeated “no rest” streaks
+    - **Prevent/mitigate:** rest day / recovery mode that pauses streak pressure; gradual goal increases; “safe pace” messaging.
+
+  - **Unwanted Behavior 3: Notification fatigue**
+    - **Why harmful:** users stop trusting the app
+    - **Detection rule:** notification responses drop (or opt-outs rise)
+    - **Prevent/mitigate:** allow notification controls in Settings; cap notification frequency; use reminders only for people who are already engaging.
+
+  - **Unwanted Behavior 4: Toxic social pressure**
+    - **Why harmful:** leaderboards can shame users
+    - **Detection rule:** repeated negative interactions / reports in social features
+    - **Prevent/mitigate:** social features are opt-in; default to private/team-only visibility; keep cheers positive (no “dislike” mechanics).
 
 ---
 
@@ -61,11 +103,68 @@ Goal: Specify the smallest actions you want from players.
 _Goal: Design for diverse motivations._
 
 - **3.1 Primary Personas:**
-  - **"Alex" (Achiever):** Motivated by "Hard Fun"; focuses on **Points** and **Levels**.
-  - **"Sam" (Socializer):** Motivated by "People Fun"; stays active to help their **Group** win the weekly challenge.
-- **3.2 Target Aesthetics (MDA Framework):**
-  - **Achievement:** Emotional response from hitting a milestone.
-  - **Fellowship:** Connection felt through group leaderboards and cooperative goals.
+  - **Alex (Achiever):**
+    - **Goals:** Build a routine, see progress every day, and earn milestones (levels/badges).
+    - **Motivators:** Points + levels, clear “what to do today,” and satisfying mini-celebrations.
+    - **Pain points:** Gets bored quickly, forgets to log steps, and may quit if goals feel too hard.
+    - **Access & constraints:** Works with phone-only use and prefers quick manual logging at MVP.
+  - **Sam (Socializer):**
+    - **Goals:** Feel part of a team and stay motivated by supportive social interaction.
+    - **Motivators:** Team goals, cheering, and friendly weekly challenges.
+    - **Pain points:** Worries about privacy and doesn’t want to feel judged by leaderboards.
+    - **Access & constraints:** Has a busy schedule; needs reminders but wants control over notifications/social visibility.
+
+- **3.2 Target Aesthetics (MDA / MDA mapping):**
+  - **Achievement:** Milestone moments (first streak, level-ups, badge unlocks) that make progress feel real.
+  - **Fellowship:** Optional groups, cheers, and team standings that encourage encouragement (not shame).
+
+---
+
+### **3.3 Segments & motivators**
+
+Use segments so your design can work for different user mindsets.
+
+- **Newcomers (Week 1):**
+  - **Preferred play pattern:** small starting goal, quick wins, simple guidance.
+  - **Risks/needs:** feeling overwhelmed or forgetting to log early.
+- **Consistency builders:**
+  - **Preferred play pattern:** daily logging, protecting streaks, using rest/recovery options.
+  - **Risks/needs:** burnout if “perfect days” become stressful.
+- **Socially motivated users:**
+  - **Preferred play pattern:** join a team, send/receive cheers, check weekly progress.
+  - **Risks/needs:** negative comparisons or discomfort from public ranking.
+
+Accessibility considerations (lightweight): big step numbers, clear labels for streak/goal, and plain-language copy for actions.
+
+---
+
+### **3.4 Player journey (first 30 days)**
+
+Designed journey flow: start easy, reward early success, then build sustainable identity.
+
+- **Days 0–2: Onboarding + first connection**
+  - **Player actions:** sign up, allow/choose step logging + notification preferences, pick a starting goal.
+  - **Emotions:** curiosity + reassurance.
+  - **Friction points:** confusion about what counts as a “log.”
+  - **Design opportunity:** a clear “Log steps” CTA and a first gentle quest prompt.
+
+- **Days 3–7: First success + streak build**
+  - **Player actions:** log steps 3–5 days, watch streak grow.
+  - **Emotions:** pride and momentum.
+  - **Friction points:** missing a day and feeling like it’s failure.
+  - **Design opportunity:** rest day / recovery mode that reduces shame.
+
+- **Week 2: Habit reinforcement**
+  - **Player actions:** keep logging, optionally join a group.
+  - **Emotions:** “this is becoming normal.”
+  - **Friction points:** boredom with repetition.
+  - **Design opportunity:** weekly recap + small new badge/route unlock.
+
+- **Weeks 3–4: Progression + mastery**
+  - **Player actions:** level up, unlock routes/badges, optionally check team standing (opt-in).
+  - **Emotions:** competence + belonging.
+  - **Friction points:** too much pressure or social discomfort.
+  - **Design opportunity:** opt-in social controls + anti-grind limits.
 
 ---
 
